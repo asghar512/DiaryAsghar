@@ -1,0 +1,201 @@
+:root {
+
+  --blue-color: lightblue;
+  --backgrounds:#8BC8CC; 
+  --cc:#83EC10;
+  --err:black;
+  --transition: all ease-in-out 0.3s;
+
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: var(--backgrounds); */
+  background-image: url(https://previews.123rf.com/images/rawpixel/rawpixel1611/rawpixel161125151/111072573-diary-writing-concept.jpg);
+}
+
+html,
+body,
+#root {
+  height: 100%;  
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.card {
+  padding: 120px;
+  text-align: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 0 auto;
+  
+}
+
+.inputWrapper {
+  margin: 2rem auto;
+  width: 50%;
+}
+
+input:not([type='checkbox']),
+button {
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+input:not([type='checkbox']),
+textarea {
+  border-radius: 12px solid grey;
+  padding: 15px;
+  color: black;
+  transition: var(--transition);
+}
+
+input:not([type='checkbox']):focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--blue-color);
+}
+
+button {
+  margin-top: 20px;
+  appearance: none;
+  border: 1px solid var(--blue-color);
+  color: black;
+  background-color: var(--blue-color);
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 1em;
+  box-shadow: 1px 4px 6px grey;
+  transition: var(--transition);
+  width:250px
+  
+}
+
+button.secondary {
+  color: black;
+  background-color:var(--blue-color);
+  border-color: black;
+}
+
+button:hover,
+button:focus {
+  box-shadow: 4px 6px 8px grey;
+  font-size: 15px;
+}
+.header1p{
+  font-size: 20px;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.error {
+  margin: 0;
+  margin-top: 0.2em;
+  font-size: 16px;
+  color: var(--err);
+  animation: 0.3s ease-in-out forwards fadeIn;
+}
+
+.two-cols {
+  display: flex;
+  flex-wrap: wrap;
+  height: 200vh;
+}
+
+.two-cols .left {
+  border-right: 1px solid black;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.two-cols .right {
+  overflow-y: auto;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.subtitle {
+  font-size:20px;
+  opacity: 0.85;
+  color: blue;
+}
+
+.title,
+.subtitle {
+  margin: 15px;
+}
+
+.diary-tile {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1em;
+}
+
+.editor {
+  height: 10px;
+  padding: 33px;
+}
+
+.editor input {
+  width: 100%;
+}
+
+.editor textarea {
+  width: 100%;
+  height: calc(100vh - 160px);
+  color: #239B56;
+  font-size: 20px;
+}
+
+.entries ul {
+  list-style: none;
+  padding: 0;
+}
+
+.entries li {
+  color:var(--err);
+  padding:3px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.entries li:hover{
+  color: red;
+}
+
+@media (min-width: 768px) {
+  .two-cols .left {
+    width: 25%;
+  }
+
+  .two-cols .right {
+    width: 75%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
